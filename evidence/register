@@ -1,0 +1,12 @@
+$ export BOOK_USER='bookstudent2026'
+$ read -s -p "Book API password: " BOOK_PASSWORD; export BOOK_PASSWORD
+$ curl -sS -X POST http://localhost:5000/register -H "Content-Type: application/json" -d "{\"username\":\"${BOOK_USER}\",\"password\":\"${BOOK_PASSWORD}\"}" | jq
+{
+  "message": "User registered successfully."
+}
+
+Duplicate-user demonstration:
+$ curl -sS -X POST http://localhost:5000/register -H "Content-Type: application/json" -d "{\"username\":\"${BOOK_USER}\",\"password\":\"${BOOK_PASSWORD}\"}" | jq
+{
+  "message": "Username already exists."
+}

@@ -1,0 +1,4 @@
+$ curl -sS -X DELETE http://localhost:5000/customer/auth/review/1 -H "Authorization: Bearer $TOKEN" | jq
+{
+  "message": "Review deleted successfully."
+}

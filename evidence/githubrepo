@@ -1,0 +1,10 @@
+$ export GITHUB_TOKEN="$(gh auth token)"
+$ curl -sS -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/repos/Ved171104dev/expressBookReviews | jq '.parent.full_name'
+"ibm-developer-skills-network/expressBookReviews"
+
+$ curl -sS -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/repos/Ved171104dev/expressBookReviews | jq '{full_name, fork, parent: .parent.full_name}'
+{
+  "full_name": "Ved171104dev/expressBookReviews",
+  "fork": true,
+  "parent": "ibm-developer-skills-network/expressBookReviews"
+}

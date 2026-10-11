@@ -1,0 +1,12 @@
+$ curl -sS -X POST http://localhost:5000/customer/login -H "Content-Type: application/json" -d "{\"username\":\"${BOOK_USER}\",\"password\":\"${BOOK_PASSWORD}\"}" | jq
+{
+  "message": "User logged in successfully.",
+  "accessToken": "<redacted JWT token>"
+}
+[JWT redacted after capturing the real response.]
+
+Invalid-password demonstration:
+$ curl -sS -X POST http://localhost:5000/customer/login -H "Content-Type: application/json" -d "{\"username\":\"${BOOK_USER}\",\"password\":\"incorrect-password\"}" | jq
+{
+  "message": "Invalid username or password."
+}

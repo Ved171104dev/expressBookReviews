@@ -6,7 +6,7 @@ const {
   getBookByISBN,
   getBooksByAuthor,
   getBooksByTitle
-} = require('../router/axios_client.js');
+} = require('../router/general.js').axiosBookClient;
 
 let server;
 let baseUrl;

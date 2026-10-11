@@ -32,8 +32,8 @@ Send the token as `Authorization: Bearer <token>`.
 
 ## Axios tasks and tests
 
-`router/axios_client.js` exports asynchronous Axios functions for retrieving all
-books and searching by ISBN, author, and title.
+`router/general.js` exports asynchronous Axios functions for retrieving all
+books and searching by ISBN, author, and title, as required by Task 11.
 
 ```bash
 npm test
